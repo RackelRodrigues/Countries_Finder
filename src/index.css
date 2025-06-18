@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Colors */
+  --blue-900: hsl(209, 23%, 22%);
+  --blue-950: hsl(207, 26%, 17%);
+  --grey-950: hsl(200, 15%, 8%);
+  --grey-400: hsl(0, 0%, 50%);
+  --grey-50: hsl(0, 0%, 97%);
+  --white: hsl(0, 100%, 100%);
+
+  /* Font sizes */
+  --font-homepage: 14px;
+  --font-detail: 16px;
+
+  /* Fonts */
+  --font-family: "Nunito Sans", sans-serif;
+  --font-light: 300;
+  --font-semi-bold: 600;
+  --font-bold: 800;
+}
