@@ -52,10 +52,25 @@ function App() {
     setIsDark((prevTheme) => !prevTheme);
   };
 
-  const handleSearchName = async (e: any) => {
-    const Name = e.target.value;
+  const handleSearch = (
+    e?:
+      | React.ChangeEvent<HTMLInputElement>
+      | React.KeyboardEvent<HTMLInputElement>
+  ) => {
+    const name = e ? (e.target as HTMLInputElement).value : searchName;
+    executeSearch(name);
+  };
+
+  const executeSearch = async (name: string) => {
     try {
-      const response = await api.get(`/name/${Name}`);
+      if (!name) {
+        const response = await api.get(
+          "/all?fields=name,flags,population,region,capital"
+        );
+        setDados(response.data);
+        return;
+      }
+      const response = await api.get(`/name/${name}`);
       setDados(response.data);
     } catch (error) {
       console.error("Erro:", error);
@@ -85,9 +100,10 @@ function App() {
             placeholder="Search for country..."
             value={searchName}
             onChange={(e) => setSearchName(e.target.value)}
-            onKeydown={(e) => {
-              if (e.key === "Enter") handleSearchName(e);
+            onKeyDown={(e) => {
+              if (e.key === "Enter") handleSearch(e);
             }}
+            onSearch={() => handleSearch()}
           />
         </ContainerInput>
 
