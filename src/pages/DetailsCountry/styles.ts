@@ -53,6 +53,7 @@ export const Container = styled.div<Props>`
     flex-direction: row;
     margin-top: 2rem;
     gap: 2rem;
+    height: 100%;
     max-height: 20rem;
     @media screen and (min-width: 610px) and (max-width: 1025px) {
       padding: 0 1rem;
@@ -61,6 +62,7 @@ export const Container = styled.div<Props>`
     @media (max-width: 609px) {
       display: block;
       height: 100%;
+      max-height: 100%;
     }
   }
 `;
@@ -102,7 +104,7 @@ export const ContainerTagName = styled.div`
     height: 100%;
   }
   @media screen and (max-width: 609px) {
-    padding: 1rem 0 1rem 0;
+    height: 100%;
   }
   h3 {
     font-size: 1.2rem;
@@ -112,6 +114,7 @@ export const ContainerTagName = styled.div`
     @media (max-width: 609px) {
       padding: 0.5rem 0 0.3rem 0;
       margin-right: 0;
+      height: 100%;
     }
   }
 
@@ -144,7 +147,7 @@ export const Name = styled.h1`
 
   @media screen and (min-width: 610px) and (max-width: 1025px) {
     font-size: 2rem;
-    padding: 0 1rem;
+    padding: 0.5rem 1rem;
   }
 `;
 
