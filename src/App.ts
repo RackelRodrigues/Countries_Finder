@@ -12,6 +12,9 @@ export const Container = styled.div`
   height: 100%;
   width: 100%;
 
+  @media (min-width: 1025px) and (max-width: 1440px) {
+    padding: 0 4rem;
+  }
   @media (min-width: 610px) and (max-width: 1025px) {
     grid-template-columns: repeat(3, 1fr);
     padding: 0 2rem;
