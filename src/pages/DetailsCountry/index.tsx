@@ -93,6 +93,11 @@ const DetailsCountry = () => {
                   <span> Capital:</span>
                   {country.capital}
                 </InfoCountry>
+                {country.area && (
+                  <InfoCountry>
+                    <span>Área:</span> {country.area.toLocaleString()} km²
+                  </InfoCountry>
+                )}
               </div>
               <div>
                 {country.tld?.[0] && (
@@ -109,6 +114,18 @@ const DetailsCountry = () => {
                   {country.languages &&
                     Object.values(country.languages).join(", ")}
                 </InfoCountry>
+                {country.maps?.googleMaps && (
+                  <InfoCountry>
+                    <span>Link do Maps:</span>
+                    <a
+                      href={country.maps.googleMaps}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Ver no Google Maps
+                    </a>
+                  </InfoCountry>
+                )}
               </div>
             </div>
             <ContainerTagName>
