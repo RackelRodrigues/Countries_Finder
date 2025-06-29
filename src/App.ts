@@ -6,16 +6,15 @@ interface Props {
 export const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
+  gap: 1rem;
   justify-items: center;
   align-items: center;
+  margin: 0 auto;
   height: 100%;
   width: 100%;
+  padding: 0 2.9rem;
 
-  @media (min-width: 1025px) and (max-width: 1440px) {
-    padding: 0 4rem;
-  }
-  @media (min-width: 610px) and (max-width: 1025px) {
+  @media (min-width: 610px) and (max-width: 1024px) {
     grid-template-columns: repeat(3, 1fr);
     padding: 0 2rem;
   }
