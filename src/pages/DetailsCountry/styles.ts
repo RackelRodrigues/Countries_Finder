@@ -35,7 +35,6 @@ export const Container = styled.div<Props>`
     display: flex;
     flex-direction: column;
     margin-left: 2rem;
-    min-height: 30rem;
 
     @media screen and (min-width: 610px) and (max-width: 1025px) {
       margin-left: 0;

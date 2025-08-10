@@ -78,7 +78,7 @@ const DetailsCountry = () => {
                 </InfoCountry>
                 <InfoCountry>
                   <span> Population:</span>
-                  {country.population}
+                  {country.population.toLocaleString()}
                 </InfoCountry>
 
                 <InfoCountry>
