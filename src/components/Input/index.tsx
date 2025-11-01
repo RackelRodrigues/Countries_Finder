@@ -1,6 +1,7 @@
+import type { ComponentProps } from "react";
 import { InputContainer, InputStyled, SearchIcon } from "./styles";
 
-interface InputProps {
+interface InputProps extends ComponentProps<"input"> {
   placeholder?: string;
   isDark?: boolean;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -16,6 +17,7 @@ const Input = ({
   value,
   onKeyDown,
   onSearch,
+  ...props
 }: InputProps) => {
   return (
     <InputContainer isDark={isDark}>
@@ -25,6 +27,7 @@ const Input = ({
         value={value}
         onKeyDown={onKeyDown}
         onChange={onChange}
+        {...props}
       />
     </InputContainer>
   );

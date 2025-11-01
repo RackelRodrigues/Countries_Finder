@@ -34,7 +34,7 @@ export const Container = styled.div<Props>`
   .Container-info {
     display: flex;
     flex-direction: column;
-    margin-left: 2rem;
+    margin-left: 1.5rem;
 
     @media screen and (min-width: 610px) and (max-width: 1025px) {
       margin-left: 0;
@@ -69,16 +69,15 @@ export const Container = styled.div<Props>`
 export const ContainerInfo = styled.div`
   width: 100%;
   height: 100%;
-
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   padding-top: 3rem;
+  padding: 3rem 0 0 1rem;
   @media screen and (min-width: 610px) and (max-width: 1025px) {
     height: 100%;
     flex-direction: column;
-
     max-width: 50rem;
     padding-top: 4rem;
   }

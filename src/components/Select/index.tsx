@@ -6,14 +6,14 @@ import {
   SelectIconUp,
   SelectOptions,
 } from "./styles";
-import { useState } from "react";
+import { useState, type ComponentProps } from "react";
 
 type Option = {
   label: string;
   value: string;
 };
 
-interface SelectProps {
+interface SelectProps extends ComponentProps<"select"> {
   value: string;
   onChange?: (e: React.ChangeEvent<HTMLSelectElement>) => void;
   options: Option[];
@@ -27,6 +27,7 @@ const Select = ({
   onChange,
   placeholder,
   isDark,
+  ...props
 }: SelectProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -39,6 +40,7 @@ const Select = ({
           setIsOpen(false);
         }}
         onClick={() => setIsOpen((prev) => !prev)}
+        {...props}
       >
         {placeholder && (
           <SelectOptions value="" isDark={isDark}>
@@ -56,7 +58,7 @@ const Select = ({
           </SelectOptions>
         ))}
       </SelectStyled>
-      <SelectButton>
+      <SelectButton aria-label="Open selection menu">
         {isOpen ? <SelectIconDown /> : <SelectIconUp />}
       </SelectButton>
     </SelectContainer>
